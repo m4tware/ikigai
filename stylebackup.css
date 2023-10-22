@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+/*
+
+.cards::before{
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image:
+        linear-gradient(to bottom, trasparent 10%
+        rgba(0,0,0,0.5) 50%
+        rgba(0,0,0,)95%
+    );
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+.cards:hover::before{
+    opacity: 1;
+}
+
+*/
+
+
+*{
+    font-family: 'Rajdhani', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(106, 105, 105);
+}
+
+body{
+    background-color: rgb(106, 105, 105);
+}
+
+
+/* MENU DE NAVEGACIÓN */
+
+
+
+.container{
+    display: flex;
+    justify-content: space-between;
+    min-height: 100px;
+    width:auto;
+    /*background-color: rgb(42, 42, 42);*/
+    align-items: center;
+    padding: 5px 5%;
+}
+
+.headerImg{
+    transition: all 0.2s;
+}
+
+.headerImg:hover{
+    transform: scale(1.2);
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    font-size: 25px;
+    text-shadow: 0px 4px 5px rgb(150, 150, 150);
+    transition: 0.2;
+}
+
+nav a{
+    padding: 0px 15px;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+
+/* botón: Train With Us */
+
+
+.bttn button{
+    font-weight: 500;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: none;
+    cursor: grabbing;
+    transition: all 0.3s;
+}
+
+.bttn button:hover{
+    background-color: rgb(90, 15, 15);
+    color: rgb(226, 226, 226);
+    text-shadow: 0px 4px 10px rgb(255, 255, 255);
+}
+
+.bttn2 button{
+    font-weight: 500;
+    font-size: 30px;
+    padding: 10px 20px;
+    border: none;
+    cursor: grabbing;
+    transition: all 0.3s;
+}
+
+.bttn2 button:hover{
+    background-color: rgb(90, 15, 15);
+    color: rgb(226, 226, 226);
+    text-shadow: 0px 4px 10px rgb(255, 255, 255);
+}

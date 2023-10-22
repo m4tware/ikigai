@@ -1,0 +1,684 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{
+    font-family: 'Rajdhani', sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+*::-webkit-scrollbar {
+    width: 15px;
+  }
+
+*::-webkit-scrollbar-track {
+    background: #222222;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #0f0f0f;
+    border-radius: 5px;
+    border: 2px solid #e1e1e1;
+}
+
+body{
+    background-color: black;
+    color: white;
+}
+
+h1{
+    font-size: 3.5em;
+}
+h2{
+    font-size: 2.5em;
+}
+h3{
+    font-size: 2em;
+}
+p{
+    font-size: 1.25em;
+}
+
+/* MENU DE NAVEGACIÓN */
+
+.container{
+    max-width: 1400px;
+    margin: auto;
+}
+
+header{
+    background-color: #0f0f0f;
+}
+
+header .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+header nav{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+header .container nav a{
+    width: max-content;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    text-shadow: 0px 4px 5px rgb(150, 150, 150);
+}
+
+header .container nav a::after{
+    content: '';
+    bottom: 0;
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 1px;
+    background-color: white;
+    transition: .2s ease-in-out;
+    box-shadow: 1px 0px 10px 2px white;
+    opacity: 0;
+    transform: scaleX(0);
+}
+
+header .container nav a:hover::after{
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+header .container .bttn{
+    text-decoration: none;
+}
+
+nav a{
+    padding: 5px 15px;
+}
+
+.headerImg{
+    padding-top: 5px;
+    transition: all 0.2s;
+    display: none;
+}
+
+.headerImg:hover{
+    transform: scale(1.2);
+}
+
+
+
+/* ------ INICIO ------ */
+
+
+/* section: WELCOME VID & TITLE */
+
+
+#welcome{
+    display: flex;
+    align-items: center;
+    text-align: center;    
+    justify-content: center;
+    padding: 20px 30px;
+}
+
+#welcome h1{
+    font-size: 12vw;
+    color: #6f0106;
+    position: absolute;
+    z-index: 100;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 20px #440104;
+    }
+    to {
+      text-shadow: 0 0 50px #820505fe, 0 0 30px #5d1919;
+    }
+  }
+
+#welcomeVideo{
+    opacity: 50%;
+    width: 100%;
+    height: 100%;
+}
+
+/* section: TRENDING PROGRAM*/
+
+#trendContainer{
+    background-color: rgb(20, 20, 20);
+    background-image: linear-gradient(
+        0deg, rgba(0,0,0, 0.5),
+        rgba(0,0,0, 0.5)
+    ),url('media/texture.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding: 70px;
+    margin: 0px 30px;
+}
+
+#trendContainer .container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#trendContainer .container h2{
+    font-size: 55px;
+}
+
+#trendContainer .container h2::after{
+    content: '';
+    display: block;
+    width: auto;
+    height: 5px;
+    background-color: rgb(255, 255, 255);
+}
+
+#trendContainer .container img{
+    padding-top: 10%;
+    width: 40%;
+}
+
+/* section: TRENDING SPORTS*/
+
+#trendSports{
+    padding: 50px 5px;
+}
+
+#trendSports h2{
+    text-decoration: underline;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#trendSports .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/*sport cards*/
+
+.cards{
+    position: relative;
+    width: 300px;
+    transition: all .3s ease;
+    padding: 40px 10px;
+}
+
+.cards img:first-child{
+    box-shadow:  0 60px 50px -35px rgba(106, 4, 15, .8);
+    object-fit: cover;
+    width: 100%;
+}
+
+.cards img:last-child{
+    position: absolute;
+    width: 80px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    transform: translateY(40%);
+    transition: .7s ease;
+    opacity: 0;
+}
+
+.cards:hover{
+    transform: 
+        perspective(250px)
+        rotateX(10deg)
+        translateY(-10%)
+}
+
+.cards:hover img:last-child{
+    opacity: 1;
+    transform: translateY(-10%);
+}
+
+
+
+/* ------ PELEADORES ------*/
+
+
+
+#Novedades{
+    display: none;
+}
+
+#kots_Section{
+    padding: 20px 5px;
+}
+
+#kots_Section .kotsAnimated {
+    position: absolute;
+    font-size: 80px;
+    color: white;
+    cursor: help;
+    width: 12ch;
+    border-right: 4px solid rgb(255, 255, 255);
+    overflow: hidden;
+    animation: typing 2.5s steps(12, end), blink-anim 0.5s step-end infinite alternate;
+    z-index: 100;
+    transition: all .3s ease-in-out;
+    opacity: 30%;
+}
+
+#kots_Section .kotsAnimated:hover{
+    transform: scale(0.8);
+    opacity: 100%;
+}
+
+#kots_Section{
+    display: flex;
+    align-items: center;
+    text-align: center;    
+    justify-content: center;
+    padding:50px 30px;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+@keyframes blink-anim {
+    50% {
+        border-color: transparent;
+    }
+}
+
+#kotsVideo{
+    opacity: 90%;
+    width: 100%;
+    height: 100%;
+}
+
+/* section: PELEADORES*/
+
+#fighterSection h1::before{
+    content: '';
+    display: block;
+    width: auto;
+    height: 5px;
+    background-color: #ffffff61;
+}
+
+#fighterSection h1{
+    font-size: 70px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(90deg, #656565, #ffffff, #656565);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    animation: animate 4s linear infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: rgba(100, 100, 100, 0.2);
+}
+
+@keyframes animate {
+    0% {
+      background-position: -400%;
+    }
+    100% {
+      background-position: 600%;
+    }
+  }
+
+#fighters{
+    aspect-ratio: 9/16;
+    width: 400px;
+    position: relative;
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scrollbar-color: #280202;
+}
+
+#fighters img{
+    width: 100%;
+    left: 0;
+    position: sticky;
+    object-fit: cover;
+    scroll-snap-align: center;
+}
+
+#fighterSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 5px 50px 5px;
+}
+
+#embedVid{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 30px;
+}
+
+#embedVid span{
+    color: #410909;
+    text-decoration: underline;
+    margin-right: 10px;
+}
+
+#embedVid .container h2{
+    text-decoration: underline;
+    font-size: 50px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+/* ------ ABOUT ------ */
+
+
+
+#aboutMain{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80vh;
+    background-image: linear-gradient(
+        0deg, rgba(0,0,0, 0.5),
+        rgba(0,0,0, 0.5)
+    ),url("media/mma-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+#aboutMain p{
+   padding: 0px 50px;
+}
+
+.textSpan{
+    color: #b70009;
+}
+
+.shortExp .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 30px;
+}
+
+.shortExp .container ul li{
+    list-style:none;
+    text-align: center;
+}
+
+.dojoimg{
+    opacity: 80%;
+    border-radius: 5px;
+    width: 300px;
+    margin-left: 30px;
+    filter: blur(10px);
+    transition: all .8s ease-in-out;
+    box-shadow: 0px 0px 15px 5px silver;
+    opacity: 80%;
+}
+
+.dojoimg:hover{
+    filter: none;
+    cursor: grabbing;
+    opacity: 100%;
+}
+
+.parragraphs li{
+    padding: 5px 0px;
+    font-size: 20px;
+}
+
+
+/* section: START YOUR TRAINING */
+
+#fightNow{
+    text-align: center;
+    justify-content: center;
+    padding: 60px 30px;
+}
+
+#fightNow .container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 30px;
+
+}
+
+#fightNow .container h2{
+    position: absolute;
+    font-size: 100px;
+}
+
+#fightNow .container h2:hover{
+    cursor: default;
+}
+
+.borders{
+    color: black;
+    text-shadow: 
+    -1px -1px 0 #660005,
+    1px -1px 0 #660005,
+    1px 1px 0 #660005,
+    -1px 1px 0 #660005;
+}
+
+.wavyBack{
+    color: #410909;
+    animation: waveAnim 3s ease-in-out infinite;
+}
+
+@keyframes waveAnim {
+    0%, 100% {
+      clip-path: polygon(
+        0% 47%,
+        10% 48%,
+        33% 54%,
+        54% 60%,
+        70% 61%,
+        84% 59%,
+        100% 52%,
+        100% 100%,
+        0% 100%
+      );
+    }
+  
+    50% {
+      clip-path: polygon(0% 60%,
+      15% 65%,
+      34% 66%,
+      51% 62%,
+      67% 50%,
+      84% 45%,
+      100% 46%,
+      100% 100%,
+      0% 100%
+      );
+    }
+  }
+
+.lastPart{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 30px;
+}
+
+.lastPart a::before{
+    content: '';
+    bottom: 0;
+    position: relative;
+    display: flex;
+    width: 600px;
+    height: 4px;
+    background-color: white;
+    margin-bottom: 25px;
+}
+
+.lastPart a{
+    text-decoration: none;
+    font-weight: 700;
+    color: white;
+    font-size: 35px;
+}
+
+.lastPart a:hover{
+cursor: grab;
+}
+
+/* FOOTER */
+
+footer{
+    background-color: rgb(20, 20, 20);
+}
+
+footer .container{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Buttons */
+
+
+.bttn button{
+    font-weight: 500;
+    font-size: 25px;
+    padding: 10px 20px;
+    border: none;
+    cursor: grabbing;
+    transition: all 0.3s;
+    display: none;
+}
+
+.bttn button:hover{
+    background-color: rgb(90, 15, 15);
+    color: rgb(226, 226, 226);
+    text-shadow: 0px 4px 10px rgb(255, 255, 255);
+}
+
+
+
+/* ------ MEDIA QUERIES -------*/
+
+
+
+
+@media (min-width:720px){
+    header .container{
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 10px 5px;
+    }
+
+    header nav{
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .headerImg{
+        display: flex;
+    }
+
+    .bttn button{
+        display: flex;
+    }
+
+/* ------ INICIO ------ */
+
+
+/* section: WELCOME VID & TITLE */
+
+    #welcomeVideo{
+        max-width: 80%;
+        max-height: 80%;
+    }
+
+
+/* section: TRENDING PROGRAM*/
+    
+    #trendContainer{
+        margin: 0px 11%;
+    }
+
+    #trendContainer .container{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    #trendContainer .container h2{
+        font-size: 75px;
+    }
+
+    #trendContainer .container img{
+        width: 30%;
+        padding: 0;
+    }
+
+    /* section: TRENDING SPORTS*/
+
+    #trendSports .container{
+        flex-direction: row;
+    }
+
+    #trendSports .cards{
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    /* - NOVEDADES - */
+
+    #kotsVideo{
+        opacity: 90%;
+        max-width:85%;
+        max-height: 85%;
+    }
+
+    /* - ABOUT - */
+
+    .dojoimg{
+        margin-left: 15%;
+    }
+
+}
